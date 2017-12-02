@@ -1,0 +1,24 @@
+********************************************************************
+                           ACK-3D GCC
+********************************************************************
+
+REBUILT from Mark Hutcheson and Lary L. Myers source code.
+
+* DISCLAIMER OF ALL WARRANTIES *
+
+Thank you to Mark Hutcheson and Lary L. Myers for this wonderfull work!
+
+HOW TO :
+
+FOR LINUX (no tested today) :
+
+		make -f makefile_linux
+		
+FOR WIN32 :
+		
+		make -f makefile_win32
+		
+		or
+		
+		makew32
+		
