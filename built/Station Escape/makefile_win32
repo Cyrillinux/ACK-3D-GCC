@@ -1,0 +1,19 @@
+PROG=ackse.exe
+CC=mingw32-g++.exe
+CFLAGS=-Wall -g
+LIBS=./liback/liback.a ./SDL.dll ./SDL_gfx_VS2008.dll   
+OBJS=ACKSE.O        AckWrapper.o  
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+%.O: %.CPP
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+%.o: %.CPP
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+clean:
+	rm *.o
