@@ -1,5 +1,5 @@
 LIBNAME=liback.a
-CC=gcc
+CC=mingw32-gcc.exe
 LD=ar
 CFLAGS=-Wall -g
 LDFLAGS=-r -s
