@@ -4,7 +4,7 @@ LD=g++
 LDFLAGS=-m32 -DBUILD_FOR_LINUX -I/usr/include/SDL -D_REENTRANT
 CFLAGS=-m32 -DBUILD_FOR_LINUX -Wall -g
 LIBS=../liback/liback.a  /usr/lib/i386-linux-gnu/libSDL.so /usr/lib/i386-linux-gnu/libSDL_gfx.so
-OBJS=ACKSE.O AckWrapper.o  ackmemstr.o
+OBJS=ACKSE.O AckWrapper.o
 
 all: $(PROG)
 
