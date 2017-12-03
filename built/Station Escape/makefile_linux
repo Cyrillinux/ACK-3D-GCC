@@ -1,0 +1,27 @@
+PROG=ackse
+GPP=g++
+LD=g++
+LDFLAGS=-m32 -DBUILD_FOR_LINUX -I/usr/include/SDL -D_REENTRANT
+CFLAGS=-m32 -DBUILD_FOR_LINUX -Wall -g
+LIBS=../liback/liback.a  /usr/lib/i386-linux-gnu/libSDL.so /usr/lib/i386-linux-gnu/libSDL_gfx.so
+OBJS=ACKSE.O AckWrapper.o  ackmemstr.o
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(LD) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+%.O: %.CPP
+	$(GPP) $(CFLAGS) -c $< -o $@
+	
+%.o: %.cpp
+	$(GPP) $(CFLAGS) -c $< -o $@
+	
+clean:
+	rm -f *.O
+	rm -f *.o
+
+apt:
+	sudo apt-get install libsdl-dev libsdl-gfx1.2-dev
+
+
