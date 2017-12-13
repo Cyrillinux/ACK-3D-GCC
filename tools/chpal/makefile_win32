@@ -1,0 +1,21 @@
+PROG=chpal.exe
+CC=mingw32-gcc.exe
+CFLAGS=-Wall -g
+LIBS=   
+OBJS=chpal.o
+
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+
+%.O: %.CPP
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+%.o: %.CPP
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+clean:
+	rm $(PROG)
+	rm -f *.o
+	rm -f *.O
