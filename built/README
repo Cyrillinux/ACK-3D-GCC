@@ -10,8 +10,11 @@ Thank you to Mark Hutcheson and Lary L. Myers for this wonderfull work!
 
 HOW TO :
 
-FOR LINUX (no tested today) :
+FOR LINUX :
 		make -f makefile_linux
+		
+under LUbuntu add SDL pkg :
+		make -f makefile_linux apt
 		
 FOR WIN32 :
 		make -f makefile_win32
