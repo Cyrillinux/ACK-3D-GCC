@@ -2,8 +2,11 @@
 #define WINDOWSREDEF_H
 
 #include <fcntl.h>
-
+#ifdef _LINUX_ 
+#define BUILD_FOR_LINUX 1
+#else
 #define BUILD_FOR_LINUX 0
+#endif
 #if BUILD_FOR_LINUX
 #include <sys/types.h>
 #include <unistd.h>
