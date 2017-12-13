@@ -1,3 +1,5 @@
+// Change PCX Palette - Cyril BARBATO 2017
+// * DISCLAIMER OF ALL WARRANTIES *
 #include <stdio.h>
 typedef struct _PixColorStr
 {
