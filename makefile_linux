@@ -1,0 +1,25 @@
+LIBNAME=libackx.a
+CC=gcc
+LD=ar
+CFLAGS=-m32 -Wall -g -D_LINUX_
+LDFLAGS=-r -s
+OBJS=ACKBBM.O         ACKBKGD.O        ACKDATA.O        ACKDISP.O \
+ACKDOOR.O        ACKFLOOR.O       ACKGIF.O         ACKINIT.O \
+ACKLDBMP.O       ACKOBJ.O         ACKOVER.O        ACKPCX.O \
+ACKPOV.O         ACKRAY.O         ACKRTNRecode.o   ACKUTIL.O \
+ACKVIEW.O        ACKWRAP.O	ackmemstr.o
+
+all: $(LIBNAME)
+
+$(LIBNAME): $(OBJS)
+	$(LD) $(LDFLAGS) -o $@ $^ 
+
+%.O: %.C
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+clean:
+	rm -f *.O
+	rm -f *.o
